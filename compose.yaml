@@ -1,0 +1,7 @@
+services:
+  mc-discord-bot:
+    image: mc-discord-bot
+    build: .
+    container_name: mc-discord-bot
+    restart: unless-stopped
+  
