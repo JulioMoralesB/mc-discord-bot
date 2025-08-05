@@ -30,11 +30,12 @@ function isValidIP(ip) {
 client.on('messageCreate', async (message) => {
   
   const isMessageFromBot = message.author.bot;
+  const wasMentionedEveryone  = message.mentions.everyone;
   const isDM = message.channel.type === 1;
   const wasMentioned = message.mentions.has(client.user);
   const startedWithPrefix = message.content.toLowerCase().startsWith('!pollocraft');
 
-    if (isMessageFromBot || (!isDM && !wasMentioned && !startedWithPrefix)) {
+    if (isMessageFromBot || wasMentionedEveryone || (!isDM && !wasMentioned && !startedWithPrefix)) {
       return;
     }
 
