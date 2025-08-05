@@ -55,7 +55,6 @@ client.on('messageCreate', async (message) => {
 
     switch (action) {
         case 'add_ip':
-            await initialReply.edit(`Hola ${message.author.username}, recibí tu solicitud para añadir una IP. Espera un momento mientras verifico la IP...`);
             if (isValidIP(response)) {
                 username = message.author.tag;
                 const addIpResponse = await axios.post(`${FIREWALL_API_URL}/add_ip`, {
