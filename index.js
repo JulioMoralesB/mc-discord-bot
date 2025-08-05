@@ -41,6 +41,10 @@ client.on('messageCreate', async (message) => {
     await message.react('👀');
     await message.channel.sendTyping();
 
+    const typingInterval = setInterval(() => {
+        message.channel.sendTyping().catch(console.error);
+    }, 8000);
+
   try {
     
     const interpretResponse = await axios.post(`${NLP_API_URL}/interpret`, {
@@ -79,7 +83,11 @@ client.on('messageCreate', async (message) => {
   } catch (error) {
     console.error('Error al procesar el mensaje:', error);
     await message.reply('Lo siento, ocurrió un error al procesar tu mensaje. Por favor contacta a Julio si el problema persiste.');
+  } 
+  finally {
+    clearInterval(typingInterval);
   }
+
 });
 
 client.login(process.env.DISCORD_TOKEN);
