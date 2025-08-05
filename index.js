@@ -65,7 +65,7 @@ client.on('messageCreate', async (message) => {
                     udp_port: MINECRAFT_VOICE_CHAT_PORT
                 });
 
-                await message.reply(`La IP ha sido añadida correctamente al firewall. Puedes unirte al servidor de Minecraft. Si tienes problemas, contacta a Julio.`);
+                await message.reply(`La IP ha sido añadida correctamente al firewall. Puedes unirte al servidor de Minecraft. Si tienes problemas, contacta a Apollox.`);
                 
             } else {
                 await message.reply(`La IP proporcionada no es válida. Por favor, verifica la IP y vuelve a intentarlo.`);
@@ -81,7 +81,7 @@ client.on('messageCreate', async (message) => {
 
   } catch (error) {
     console.error('Error al procesar el mensaje:', error);
-    await message.reply('Lo siento, ocurrió un error al procesar tu mensaje. Por favor contacta a Julio si el problema persiste.');
+    await message.reply('Lo siento, ocurrió un error al procesar tu mensaje. Por favor contacta a Apollox si el problema persiste.');
   } 
   finally {
     clearInterval(typingInterval);
