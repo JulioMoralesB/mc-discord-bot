@@ -4,4 +4,6 @@ services:
     build: .
     container_name: mc-discord-bot
     restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   
