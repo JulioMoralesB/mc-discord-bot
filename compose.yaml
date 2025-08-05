@@ -6,6 +6,8 @@ services:
     restart: unless-stopped
     networks:
       - mc-network
+    env_file:
+      - .env
 
 networks:
   mc-network:
